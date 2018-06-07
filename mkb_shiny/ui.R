@@ -6,9 +6,9 @@ library(DT)
 library(ggiraph)
 library(shinythemes)
 
-tags$head( tags$style(type = "text/css", "text {font-family: sans-serif}"))
-
-navbarPage("Mann Ki Baat Radio Addresses", theme = shinytheme("cerulean"),
+full_page <- tagList(
+    tags$head( tags$style(type = "text/css", "text {font-family: sans-serif}")),
+    navbarPage(title = "Mann Ki Baat Radio Addresses", theme = shinytheme("cerulean"),
            tabPanel("About",
                     includeMarkdown("about.md"),
                     br()
@@ -157,4 +157,6 @@ navbarPage("Mann Ki Baat Radio Addresses", theme = shinytheme("cerulean"),
                         )
                     )
            )
+    )
 )
+full_page
