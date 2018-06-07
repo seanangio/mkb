@@ -49,6 +49,26 @@ tfidf_data <- tidy_text %>%
     arrange(desc(n)) %>%
     bind_tf_idf(word, date_obj, n)
 
+# function to get tfidf counts for cloud and bar plot
+getTFIDF_count <- function(cutoff) {
+    
+    tfidf_words <- tfidf_data %>%
+        group_by(date_obj) %>%
+        arrange(date_obj, desc(tf_idf)) %>%
+        mutate(rank = min_rank(desc(tf_idf))) %>%
+        filter(rank <= cutoff) %>%
+        ungroup() %>%
+        select(word) %>% unique() %>% pull()
+    
+    tfidf_counts <- tidy_text %>%
+        filter(word %in% tfidf_words) %>%
+        count(word) %>%
+        arrange(desc(n))
+    
+    tfidf_counts
+    
+}
+
 # unnest bigram data
 bigrams <- corpus %>%
      unnest_tokens(bigram, text, token = "ngrams", n = 2) %>%

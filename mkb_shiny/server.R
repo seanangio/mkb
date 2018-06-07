@@ -3,6 +3,8 @@ library(ggiraph)
 library(tm)
 library(wordcloud)
 
+tags$head( tags$style(type = "text/css", "text {font-family: sans-serif}"))
+
 shinyServer(function(input, output) {
    
     # make word frequency dataset reactive
@@ -265,23 +267,22 @@ shinyServer(function(input, output) {
         
     })
     
+    # make tf-idf cloud data reactive
+    tfidf_counts <- reactive({
+        input$tfc_update
+        isolate({
+            withProgress({
+                setProgress(message = "Processing corpus...")
+                getTFIDF_count(input$tfc_cut)
+            })
+        })
+    })
+    
+    
     # tf-idf cloud logic
     output$tfidf_cloud <- renderPlot({
         
-        tfidf_words <- tfidf_data %>%
-            group_by(date_obj) %>%
-            arrange(date_obj, desc(tf_idf)) %>%
-            mutate(rank = min_rank(desc(tf_idf))) %>%
-            filter(rank <= input$tfc_cut) %>%
-            ungroup() %>%
-            select(word) %>% unique() %>% pull()
-        
-        tfidf_counts <- tidy_text %>%
-            filter(word %in% tfidf_words) %>%
-            count(word) %>%
-            arrange(desc(n))
-        
-        wordcloud_rep(tfidf_counts$word, tfidf_counts$n,
+        wordcloud_rep(tfidf_counts()$word, tfidf_counts()$n,
                   scale = c(5, 0.5),
                   random.order = FALSE, rot.per = 0.35, 
                   min.freq = input$tfc_min_freq, 
@@ -292,7 +293,7 @@ shinyServer(function(input, output) {
     # tf-idf bar plot logic
     output$tfc_top_words <- renderggiraph({
         
-        tfc_top_words <- tfidf_counts %>%
+        tfc_top_words <- tfidf_counts() %>%
             top_n(input$tfc_top_n) %>%
             ggplot(aes(fct_reorder(word, n), n, fill = n)) +
             geom_bar_interactive(aes(tooltip = as.character(n), data_id = as.character(n)), 
