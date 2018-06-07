@@ -1,6 +1,6 @@
 ### Mann Ki Baat
 
-"Mann Ki Baat", meaning (), is a monthly radio address by India's Prime Minister Narendra Modi. From its launch in October 2014, Modi has delivered 44 addresses (as of 4 June 2018), typically at the end of each month. Given he assumed the office of Prime Minister in only May 2014, these radio addresses serve as a key chronology of his time as Prime Minister.
+"Mann Ki Baat", meaning ("Mind's Voice"), is a monthly radio address by India's Prime Minister Narendra Modi. From its launch in October 2014, Modi has delivered 44 addresses (as of 4 June 2018), typically at the end of each month. Given he assumed the office of Prime Minister in only May 2014, these radio addresses serve as a key chronology of his time as Prime Minister.
 
 The depth of the corpus (44 speeches), the high-profile nature of the programme (1.43 lakh audio recordings per month according to Wikipedia), and the regularity of the interval (monthly) make the Mann Ki Baat addresses an excellent corpus for text analysis.
 

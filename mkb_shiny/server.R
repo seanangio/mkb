@@ -3,8 +3,6 @@ library(ggiraph)
 library(tm)
 library(wordcloud)
 
-tags$head( tags$style(type = "text/css", "text {font-family: sans-serif}"))
-
 shinyServer(function(input, output) {
    
     # make word frequency dataset reactive

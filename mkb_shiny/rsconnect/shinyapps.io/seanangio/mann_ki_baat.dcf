@@ -5,8 +5,8 @@ account: seanangio
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 356664
-bundleId: 1416232
+bundleId: 1416296
 url: https://seanangio.shinyapps.io/mann_ki_baat/
-when: 1528356701.62069
+when: 1528359039.15249
 asMultiple: FALSE
 asStatic: FALSE
