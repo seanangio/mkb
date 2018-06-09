@@ -51,4 +51,4 @@ Aside from the name of the address itself, the bigram approach uncovers a few ne
 
 ### Further Information
 
-The code for this project can be found on [Github](https://github.com/seanangio/mkb). Other data projects by the author can be found at http://sean.rbind.io/.
+The code for this project can be found on [Github](https://github.com/seanangio/mkb). Other data projects by the author can be found at sean.rbind.io
