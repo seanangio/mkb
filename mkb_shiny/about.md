@@ -4,16 +4,25 @@
 
 The depth of the corpus (44 speeches), the high-profile nature of the programme (1.43 lakh audio recordings per month according to Wikipedia), and the regularity of the interval (monthly) make the Mann Ki Baat addresses an excellent corpus for text analysis.
 
+<center>
+
 ![](mkb_img.png)
+
+</center>
+
+<center>
+
 [Source: https://www.narendramodi.in/mann-ki-baat]
+
+</center>
 
 ### Creating the Corpus
 
-The English translations of the Hindi addresses are available at https://www.narendramodi.in/mann-ki-baat, and in a few cases http://pib.nic.in/newsite/archiveReleases.aspx. I used the "rvest" package to collect them. Only a very minimal amount of cleaning was required. In rare cases, untranslatable Hindi expressions remain in the English translation. They were ignored.
+The English translations of the Hindi addresses are available at https://www.narendramodi.in/mann-ki-baat, and in a few cases http://pib.nic.in/newsite/archiveReleases.aspx. I used the `rvest` package to collect them. Only a very minimal amount of cleaning was required. In rare cases, untranslatable Hindi expressions remain in the English translation. They were ignored.
 
 ### Text Analysis Guide
 
-Key to much of this analysis has been the "tidytext" package, which itself builds on the tidyverse. The freely available [Tidy Text Mining](https://www.tidytextmining.com/) book was also very valuable for explaining core text analysis concepts.
+Key to much of this analysis has been the `tidytext` package, which itself builds on the `tidyverse`. The freely available [Tidy Text Mining](https://www.tidytextmining.com/) book was also very valuable for explaining core text analysis concepts.
 
 ##### Address Length
 
@@ -51,4 +60,4 @@ Aside from the name of the address itself, the bigram approach uncovers a few ne
 
 ### Further Information
 
-The code for this project can be found on [Github](https://github.com/seanangio/mkb). Other data projects by the author can be found at sean.rbind.io
+The code for this project can be found on [Github](https://github.com/seanangio/mkb). Other data projects by the author can be found at https://sean.rbind.io
